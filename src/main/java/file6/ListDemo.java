@@ -38,7 +38,6 @@ public class ListDemo {
         for (Integer integer : dataSet.keySet())
             result.put(integer, dataSet.get(integer).getAge());
 
-
         return result;
     }
 

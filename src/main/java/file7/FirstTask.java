@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstTask {
-
     public static void writeIntListToBinFile(List<Integer> integerList, String filename) {
         try (var ds = new DataOutputStream(new FileOutputStream(filename))) {
             ds.writeInt(integerList.size());

@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class House implements Serializable {
     private String houseNumber;
     private String address;
     private Person mainPerson;
-    private ArrayList<Flat> flatList;
+    private List<Flat> flatList;
 
     @JsonCreator
-    public House(@JsonProperty(value = "houseNumber") String houseNumber, @JsonProperty(value = "address") String address, @JsonProperty(value = "mainPerson") Person mainPerson, @JsonProperty(value = "flatList") ArrayList<Flat> flatList) {
+    public House(@JsonProperty(value = "houseNumber") String houseNumber, @JsonProperty(value = "address") String address, @JsonProperty(value = "mainPerson") Person mainPerson, @JsonProperty(value = "flatList") List<Flat> flatList) {
         setHouseNumber(houseNumber);
         setAddress(address);
         setMainPerson(mainPerson);
@@ -45,11 +45,11 @@ public class House implements Serializable {
         this.mainPerson = mainPerson;
     }
 
-    public ArrayList<Flat> getFlatList() {
+    public List<Flat> getFlatList() {
         return flatList;
     }
 
-    public void setFlatList(ArrayList<Flat> flatList) {
+    public void setFlatList(List<Flat> flatList) {
         this.flatList = flatList;
     }
 

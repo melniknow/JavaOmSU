@@ -3,15 +3,15 @@ package file7;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Flat implements Serializable {
     private int number;
     private double square;
-    private ArrayList<Person> personList;
+    private List<Person> personList;
 
-    public Flat(@JsonProperty(value = "number") int number, @JsonProperty(value = "square") double square, @JsonProperty(value = "name") ArrayList<Person> personList) {
+    public Flat(@JsonProperty(value = "number") int number, @JsonProperty(value = "square") double square, @JsonProperty(value = "name") List<Person> personList) {
         setNumber(number);
         setSquare(square);
         setPersonList(personList);
@@ -33,11 +33,11 @@ public class Flat implements Serializable {
         this.square = square;
     }
 
-    public ArrayList<Person> getPersonList() {
+    public List<Person> getPersonList() {
         return personList;
     }
 
-    public void setPersonList(ArrayList<Person> personList) {
+    public void setPersonList(List<Person> personList) {
         this.personList = personList;
     }
 

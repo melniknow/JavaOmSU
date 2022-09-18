@@ -1,7 +1,6 @@
 package file8;
 
 import file6.Human;
-import file6.Student;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

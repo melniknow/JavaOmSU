@@ -7,7 +7,7 @@ public class HouseService {
         try (ObjectOutput out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)))) {
             out.writeObject(house);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Ошибка сериализации");
         }
     }
 
@@ -15,8 +15,7 @@ public class HouseService {
         try (ObjectInput in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
             return (House) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-            return null;
+            throw new RuntimeException("Ошибка десериализации");
         }
     }
 }
