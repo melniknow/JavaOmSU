@@ -13,8 +13,4 @@ public class FourthTask {
                 .filter(n -> Files.isRegularFile(n) && n.toFile().getName().endsWith("." + type))
                 .collect(Collectors.toList());
     }
-
-    public static void main(String[] args) throws IOException {
-        System.out.println(getFilesFromDirWithType("txt", "/home/sergey"));
-    }
 }

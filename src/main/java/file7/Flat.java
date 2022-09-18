@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Flat implements Serializable {
-    int number;
-    double square;
-    ArrayList<Person> personList;
+    private int number;
+    private double square;
+    private ArrayList<Person> personList;
 
     public Flat(@JsonProperty(value = "number") int number, @JsonProperty(value = "square") double square, @JsonProperty(value = "name") ArrayList<Person> personList) {
-        this.number = number;
-        this.square = square;
-        this.personList = personList;
+        setNumber(number);
+        setSquare(square);
+        setPersonList(personList);
     }
 
     public int getNumber() {

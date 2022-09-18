@@ -8,18 +8,18 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Person implements Serializable {
-    String name;
-    String lastName;
-    String patronymic;
+    private String name;
+    private String lastName;
+    private String patronymic;
 
-    Date date;
+    private Date date;
 
     @JsonCreator
     public Person(@JsonProperty(value = "name") String name, @JsonProperty(value = "lastName") String lastName, @JsonProperty(value = "patronymic") String patronymic, @JsonProperty(value = "date")Date date) {
-        this.name = name;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-        this.date = date;
+        setName(name);
+        setLastName(lastName);
+        setPatronymic(patronymic);
+        setDate(date);
     }
     public Date getDate() {
         return date;

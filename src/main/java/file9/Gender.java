@@ -1,5 +1,6 @@
 package file9;
 
 public enum Gender {
-    MALE, FEMALE, KUZEVANOV
+    MALE,
+    FEMALE
 }

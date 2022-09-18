@@ -8,17 +8,17 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class House implements Serializable {
-    String houseNumber;
-    String address;
-    Person mainPerson;
-    ArrayList<Flat> flatList;
+    private String houseNumber;
+    private String address;
+    private Person mainPerson;
+    private ArrayList<Flat> flatList;
 
     @JsonCreator
     public House(@JsonProperty(value = "houseNumber") String houseNumber, @JsonProperty(value = "address") String address, @JsonProperty(value = "mainPerson") Person mainPerson, @JsonProperty(value = "flatList") ArrayList<Flat> flatList) {
-        this.houseNumber = houseNumber;
-        this.address = address;
-        this.mainPerson = mainPerson;
-        this.flatList = flatList;
+        setHouseNumber(houseNumber);
+        setAddress(address);
+        setMainPerson(mainPerson);
+        setFlatList(flatList);
     }
 
     public String getHouseNumber() {

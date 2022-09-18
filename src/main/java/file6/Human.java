@@ -3,10 +3,10 @@ package file6;
 import java.util.Objects;
 
 public class Human {
-    String name;
-    String lastName;
-    String patronymic;
-    int age;
+    private String name;
+    private String lastName;
+    private String patronymic;
+    private int age;
 
     public Human(String name, String lastName, String patronymic, int age) {
         setName(name);

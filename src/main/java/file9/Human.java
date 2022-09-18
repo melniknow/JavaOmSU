@@ -3,19 +3,18 @@ package file9;
 import java.util.Objects;
 
 public class Human {
-    String firstName;
-    String lastName;
-    String patronymic;
-
-    int age;
-    Gender gender;
+    private String firstName;
+    private String lastName;
+    private String patronymic;
+    private int age;
+    private Gender gender;
 
     public Human(String firstName, String lastName, String patronymic, int age, Gender gender) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-        this.age = age;
-        this.gender = gender;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setPatronymic(patronymic);
+        setAge(age);
+        setGender(gender);
     }
 
     public String getFirstName() {

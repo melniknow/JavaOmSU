@@ -12,12 +12,9 @@ public class LambdaDemo {
     public static final Function<String, Integer> replaceCount = n -> n.split(",").length;
     public static final Function<? super Human, Integer> getAge = Human::getAge;
     public static final BiPredicate<? super Human, ? super Human> equalsLastName = (n, m) -> n.getLastName().equals(m.getLastName());
-    public static final Function<? super Human, String> getFullName = n -> n.getFirstName() + " " + n.getLastName() + " " + n.getPatronymic();
+    public static final Function<? super Human, String> getFullName = n -> n.getFirstName() +
+            " " + n.getLastName() +
+            " " + n.getPatronymic();
     public static final Function<Human, Human> makeOldest = n -> new Human(n.getFirstName(), n.getLastName(), n.getPatronymic(), n.getAge() + 1, n.getGender());
-    public static final BiPredicate<List<Human>, Integer> isYoungerMaxAge = (list, maxAge) -> {
-        for (Human human : list) {
-            if (human.getAge() > maxAge) return false;
-        }
-        return true;
-    };
+    public static final BiPredicate<List<Human>, Integer> isYoungerMaxAge = (list, maxAge) -> list.stream().allMatch(n -> n.getAge() > maxAge);
 }

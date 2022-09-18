@@ -1,30 +1,30 @@
 package file7;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FirstTask {
-    public static void main(String[] args) throws IOException {
-        int[] arrInt = {2, 5, -1, 100, 34};
-        var fs = new FileOutputStream("integers.bin");
 
-        var ds = new DataOutputStream(fs);
-        ds.writeInt(arrInt.length);
+    public static void writeIntListToBinFile(List<Integer> integerList, String filename) {
+        try (var ds = new DataOutputStream(new FileOutputStream(filename))) {
+            ds.writeInt(integerList.size());
+            for (Integer integer : integerList) ds.writeInt(integer);
+        } catch (IOException exception) {
+            throw new RuntimeException("Ошибка записи в файл");
+        }
+    }
 
-        for (int i : arrInt) ds.writeInt(i);
+    public static List<Integer> readIntegersFromBinFile(String filename) {
+        try (var ds = new DataInputStream(new FileInputStream(filename))) {
+            var listInt = new ArrayList<Integer>();
+            var size = ds.readInt();
 
-        fs.close();
+            for (var i = 0; i < size; i++) listInt.add(ds.readInt());
 
-        int[] arrInt2;
-
-        var fs2 = new FileInputStream("integers.bin");
-        var ds2 = new DataInputStream(fs2);
-
-        var count = ds2.readInt();
-        arrInt2 = new int[count];
-
-        for (int i = 0; i < arrInt2.length; i++) arrInt2[i] = ds2.readInt();
-        ds2.close();
-
-        for (int j : arrInt2) System.out.println(j);
+            return listInt;
+        } catch (IOException e) {
+            throw new RuntimeException("Ошибка чтения из файла");
+        }
     }
 }
